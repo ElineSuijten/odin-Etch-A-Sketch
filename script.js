@@ -1,7 +1,8 @@
+const defaultSize = 16;
 const grid = document.querySelector('.grid');
 
-function createGrid() {
-    for (let i = 0; i < 256; i++) {
+function createGrid(size) {
+    for (let i = 0; i < size*size; i++) {
         const cell = document.createElement('div');
         cell.classList.add('gridCell');
         grid.appendChild(cell);
@@ -13,4 +14,5 @@ function createGrid() {
 
 
 
-createGrid();
+
+createGrid(defaultSize);
