@@ -6,18 +6,8 @@ let sliderValue = document.querySelector('#sliderValue');
 
 sliderValue.textContent = defaultSize;
 
-function clearGrid(){
-    const cells = document.querySelectorAll('.gridCellHover');
-    cells.forEach(cell => {
-        cell.classList.remove('gridCellHover');
-    })
-}
-
-
 function createGrid(size) {
-    while (grid.firstChild) {
-        grid.removeChild(grid.firstChild);
-    }
+    grid.innerHTML = "";
    
     const cellSize = 700/size;
     
@@ -45,6 +35,12 @@ function onMouseOver(event) {
     }
   }
 
+function clearGrid(){
+    const cells = document.querySelectorAll('.gridCellHover');
+    cells.forEach(cell => {
+        cell.classList.remove('gridCellHover');
+    })
+}
 
 
 slider.addEventListener('input', () => {
