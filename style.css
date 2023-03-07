@@ -58,8 +58,20 @@ body {
     box-shadow: 4px 7px rgb(70, 68, 68);
 }
 
-#startover:hover {background-color: #bbbbb9}
+#clearGrid:hover {
+    background-color: #bbbbb9
+}
 
-#startover:active {
+#clearGrid:active {
   background-color: #969494;
-  }
+}
+
+
+#eraser:hover {
+    background-color: #bbbbb9;
+}
+
+#eraser:active {
+    background-color: #969494;
+    }
+  

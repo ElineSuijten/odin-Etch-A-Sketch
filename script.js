@@ -4,6 +4,7 @@ const slider = document.querySelector('#slider');
 const clearBtn = document.querySelector('#clearGrid');
 const eraserBtn = document.querySelector('#eraser');
 let sliderValue = document.querySelector('#sliderValue');
+let erase = false;
 
 sliderValue.textContent = defaultSize;
 
@@ -22,12 +23,31 @@ function createGrid(size) {
         cell.style.height = `${cellSize}px`;
         grid.appendChild(cell);
         cell.addEventListener('mousedown', onMouseDown);
+        cell.addEventListener('mouseover', onMouseOver)
+    }
+}
+
+eraserBtn.addEventListener('click', () => {
+    erase = !erase;
+})
+
+grid.addEventListener('mousedown', mouseDownErase)
+grid.addEventListener('mouseover', mouseOverErase)
+
+function mouseDownErase(event) {
+    if (erase){
+        event.target.classList.remove('gridCellHover');
+    }
+}
+
+function mouseOverErase(event) {
+    if (event.buttons === 1 && erase) {
+        event.target.classList.remove('gridCellHover');
     }
 }
 
 function onMouseDown(event) {
     event.target.classList.add('gridCellHover');
-    grid.addEventListener('mouseover', onMouseOver);
 }
 
 function onMouseOver(event) {
@@ -43,9 +63,6 @@ function clearGrid(){
     })
 }
 
-function eraseGriddCells(){
-
-}
 
 slider.addEventListener('input', () => {
     const gridSize = slider.value;
