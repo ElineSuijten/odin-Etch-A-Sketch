@@ -1,7 +1,8 @@
 const defaultSize = 16;
 const grid = document.querySelector('.grid');
 const slider = document.querySelector('#slider');
-const clearBtn = document.querySelector('#startover');
+const clearBtn = document.querySelector('#clearGrid');
+const eraserBtn = document.querySelector('#eraser');
 let sliderValue = document.querySelector('#sliderValue');
 
 sliderValue.textContent = defaultSize;
@@ -42,6 +43,9 @@ function clearGrid(){
     })
 }
 
+function eraseGriddCells(){
+
+}
 
 slider.addEventListener('input', () => {
     const gridSize = slider.value;
@@ -51,3 +55,4 @@ slider.addEventListener('input', () => {
 
 createGrid(defaultSize);
 clearBtn.addEventListener('click', clearGrid)
+
