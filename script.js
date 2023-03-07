@@ -27,12 +27,6 @@ function createGrid(size) {
     }
 }
 
-eraserBtn.addEventListener('click', () => {
-    erase = !erase;
-})
-
-grid.addEventListener('mousedown', mouseDownErase)
-grid.addEventListener('mouseover', mouseOverErase)
 
 function mouseDownErase(event) {
     if (erase){
@@ -63,6 +57,10 @@ function clearGrid(){
     })
 }
 
+function changeButtonColor() {
+    document.getElementById('eraser').classList.toggle("eraser2");
+}
+
 
 slider.addEventListener('input', () => {
     const gridSize = slider.value;
@@ -72,4 +70,10 @@ slider.addEventListener('input', () => {
 
 createGrid(defaultSize);
 clearBtn.addEventListener('click', clearGrid)
+eraserBtn.addEventListener('click', () => {
+    erase = !erase;
+    changeButtonColor();
+})
+grid.addEventListener('mousedown', mouseDownErase)
+grid.addEventListener('mouseover', mouseOverErase)
 
