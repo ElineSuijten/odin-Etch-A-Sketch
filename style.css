@@ -8,7 +8,7 @@ body {
     min-height: 100vh;
     display: flex;
     flex-direction: column;
-    background-color: rgb(248, 74, 176);
+    background-color: rgb(247, 120, 194);
     justify-content: center;
     align-items: center;
   }
@@ -22,7 +22,7 @@ body {
     appearance: none;
     height: 25px;
     margin-left: 50px;
-    background: rgb(177, 169, 169);
+    background: rgb(128, 128, 128);
     outline: none;
     border-radius: 50px;
 }
@@ -32,17 +32,17 @@ body {
     appearance: none;
     width: 25px;
     height: 25px;
-    background: rgb(243, 0, 190);
+    background: rgb(146, 0, 85);
     border-radius: 50%;
     cursor: pointer;
 }
 
 .grid {
    display: grid;
-   border: 5px solid black;
-   height: 700px;
-   width: 700px;
+   height: 500px;
+   width: 500px;
    margin: 50px;
+   box-shadow: 10px 10px;
 }
 
 .gridCell {
@@ -61,26 +61,22 @@ body {
     border-radius: 7px;
     padding: 10px;
     font-size: 25px;
+    font-family: 'Common Pixel', sans-serif;
     font-weight: 700;
     margin-bottom: 50px;
-    box-shadow: 4px 7px rgb(70, 68, 68);
+    box-shadow: 4px 7px rgb(0, 0, 0);
     margin-left: 50px;
 }
 
 .eraser2 {
-    background-color: rgb(255, 76, 181);
+    background-color: rgb(128, 0, 74);
 }
 
-#clearGrid:hover {
-    background-color: #bbbbb9
-}
 
 #clearGrid:active {
   background-color: #969494;
 }
 
-#eraser:hover {
-    background-color: #bbbbb9;
-}
+
 
   

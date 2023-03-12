@@ -11,7 +11,8 @@ sliderValue.textContent = defaultSize;
 function createGrid(size) {
     grid.innerHTML = "";
    
-    const cellSize = 700/size;
+    const containerWidth = grid.clientWidth;
+    const cellSize = containerWidth / size;
     
     grid.style.gridTemplateColumns = `repeat(${size}, ${cellSize}px)`;
     grid.style.gridTemplateRows = `repeat(${size}, ${cellSize}px)`;
