@@ -3,6 +3,7 @@ const grid = document.querySelector('.grid');
 const slider = document.querySelector('#slider');
 const clearBtn = document.querySelector('#clearGrid');
 const eraserBtn = document.querySelector('#eraser');
+const colorPicker = document.querySelector('#colorpicker');
 let sliderValue = document.querySelector('#sliderValue');
 let erase = false;
 
@@ -28,25 +29,28 @@ function createGrid(size) {
     }
 }
 
-
 function mouseDownErase(event) {
-    if (erase){
+    if (erase){   
+        event.target.style.removeProperty('--cell-color');
         event.target.classList.remove('gridCellHover');
     }
 }
 
 function mouseOverErase(event) {
     if (event.buttons === 1 && erase) {
+        event.target.style.removeProperty('--cell-color');
         event.target.classList.remove('gridCellHover');
     }
 }
 
 function onMouseDown(event) {
+    event.target.style.setProperty('--cell-color', colorPicker.value);
     event.target.classList.add('gridCellHover');
 }
 
 function onMouseOver(event) {
     if (event.buttons === 1) {
+      event.target.style.setProperty('--cell-color', colorPicker.value);
       event.target.classList.add('gridCellHover');
     }
   }
@@ -54,6 +58,7 @@ function onMouseOver(event) {
 function clearGrid(){
     const cells = document.querySelectorAll('.gridCellHover');
     cells.forEach(cell => {
+        cell.style.removeProperty('--cell-color');
         cell.classList.remove('gridCellHover');
     })
 }
@@ -75,6 +80,12 @@ eraserBtn.addEventListener('click', () => {
     erase = !erase;
     changeButtonColor();
 })
+
+colorPicker.addEventListener('input', () => {
+    const color = colorPicker.value;
+    const coloredCells = document.querySelectorAll('.gridCellHover');
+  })
+
 grid.addEventListener('mousedown', mouseDownErase)
 grid.addEventListener('mouseover', mouseOverErase)
 
