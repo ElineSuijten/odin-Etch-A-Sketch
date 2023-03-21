@@ -23,7 +23,7 @@ main {
 }
 .container {
     margin: 0 auto;
-    max-width: 800px;
+    max-width: 750px;
   }
 .gamepad {
     display: flex;
@@ -32,8 +32,8 @@ main {
     align-items: center;
     background-color: #fa3bca;
     padding: 20px;
-    width: 800px;
-    height: 800px;
+    width: 750px;
+    height: 750px;
     border-radius: 20px;
     box-shadow: 10px 10px rgb(107, 0, 75);
 }
@@ -46,7 +46,7 @@ main {
    display: grid;
    height: 520px;
    width: 520px;
-   margin: 30px;
+   margin: 20px;
 }
 
 .gridCell {
