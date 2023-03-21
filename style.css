@@ -32,8 +32,9 @@ main {
     align-items: center;
     background-color: #fa3bca;
     padding: 20px;
-    width: 750px;
-    height: 750px;
+    margin: 20px;
+    width: 800px;
+    height: 800px;
     border-radius: 20px;
     box-shadow: 10px 10px rgb(107, 0, 75);
 }
